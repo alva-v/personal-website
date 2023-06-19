@@ -1,0 +1,10 @@
+defaults:
+  -
+    scope:
+      path: "_projects"
+    values:
+      layout: "project"
+
+collections:
+  projects:
+    output: true
