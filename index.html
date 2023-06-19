@@ -1,14 +1,41 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alva Vially</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Alva Vially</h1>
-    <p>Hey, I'm Alva Vially, a PHP/Laravel webdev currently based in Lyon, France.</p>
-    <!-- add pic -->
-    <!-- nav, articles and projects -->
-</body>
+    <img src="/assets/img/alva.jpg" alt="">
+    <p>
+      Hey, I'm Alva Vially, a PHP/Laravel webdev currently based in Lyon, France. <br>
+      My interests include FOSS, minimalism and the impact of technology on our societies and environments.
+    </p>
+    <nav>
+      <ul>
+        {% for item in site.data.nav %}
+          {% if item.in_home == "1" %}
+            <li>
+              <a href="{{ item.link }}">{{ item.text }}</a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    <h2>Updates</h2>
+    <ol>
+      {% for post in site.posts %}
+        <li>
+          {{ post.date | date: "%y-%m-%d" }}
+          <span aria-hidden="true">|</span>
+          {{ post.title }}</li>
+      {% endfor %}
+    </ol>
+    {% comment %}
+    nav, articles and projects
+    {% endcomment %}</body>
 </html>

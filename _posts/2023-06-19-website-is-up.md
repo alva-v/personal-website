@@ -1,5 +1,5 @@
 ---
-title: website is up!
+title: Website is up!
 ---
 {% comment %}
 post date will have to be changed
