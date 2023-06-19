@@ -1,15 +1,21 @@
 defaults:
   -
     scope:
-      path: "_projects"
+      path: "_articles"
     values:
-      layout: "project"
+      layout: "article"
   -
     scope:
       path: "_posts"
     values:
       layout: "default"
+    scope:
+      path: "_projects"
+    values:
+      layout: "project"
 
 collections:
+  articles:
+    output: true
   projects:
     output: true
