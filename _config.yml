@@ -4,6 +4,11 @@ defaults:
       path: "_projects"
     values:
       layout: "project"
+  -
+    scope:
+      path: "_posts"
+    values:
+      layout: "default"
 
 collections:
   projects:
