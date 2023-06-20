@@ -47,8 +47,7 @@
 
     <h2>Articles</h2>
     <ul>
-      {% assign articles = site.articles | sort: "update" %}
-      {% for article in articles reversed limit: 3 %}
+      {% for article in site.articles reversed limit: 3 %}
         <li>
           <a href="{{ article.url }}">{{ article.title }}</a>
         </li>
@@ -61,7 +60,20 @@
     {% endif %}
 
     <h2>Projects</h2>
-    {% comment %}
-    articles and projects
-    {% endcomment %}</body>
+    <ol>
+      {% for project in site.projects %}
+        <li>
+          <a href="project.url">{{ project.title }}</a>
+          <img src="{{ project.thumbnail }}" alt="">
+          {{ project.desc }}
+        </li>
+      {% endfor %}
+    </ol>
+    {% if site.projects.size > 3 %}
+      <p>
+        <a href="/projects">See more projects</a>
+      </p>
+    {% endif %}
+
+  </body>
 </html>

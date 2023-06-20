@@ -18,5 +18,9 @@ defaults:
 collections:
   articles:
     output: true
+    sort_by: update
   projects:
     output: true
+  
+exclude: 
+  - assets/img/projects/*.png
