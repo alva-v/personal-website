@@ -23,7 +23,7 @@ layout: none
         {% for item in site.data.nav %}
           {% if item.in_home == "1" %}
             <li>
-              <a href="{{ item.link }}">{{ item.text | capitalize }}</a>
+              <a href="{{ item.link }}">{{ item.text }}</a>
             </li>
           {% endif %}
         {% endfor %}

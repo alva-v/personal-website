@@ -1,2 +1,22 @@
-{% include backlink.html %}
-<!-- include socials and nav -->
+<footer>
+  {% include backlink.html %}
+  <nav>
+    <ul>
+      {% for item in site.data.nav %}
+        <li>
+          <a href="{{ item.link }}">{{ item.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <address>
+    <ul>
+      {% for item in site.data.socials %}
+        <li>
+          <a href="{{ item.link }}">
+            {{ item.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </address>
+</footer>
