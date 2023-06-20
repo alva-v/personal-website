@@ -22,7 +22,7 @@
         {% for item in site.data.nav %}
           {% if item.in_home == "1" %}
             <li>
-              <a href="{{ item.link }}">{{ item.text }}</a>
+              <a href="{{ item.link }}">{{ item.text | capitalize }}</a>
             </li>
           {% endif %}
         {% endfor %}
@@ -30,15 +30,7 @@
     </nav>
 
     <h2>Updates</h2>
-    <ol>
-      {% for post in site.posts limit: 3 %}
-        <li>
-          {{ post.date | date: "%y-%m-%d" }}
-          <span aria-hidden="true">|</span>
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </li>
-      {% endfor %}
-    </ol>
+    {% include update-list.html limit=3 %}
     {% if site.posts.size > 3 %}
       <p>
         <a href="/updates">See more updates</a>
@@ -46,13 +38,7 @@
     {% endif %}
 
     <h2>Articles</h2>
-    <ul>
-      {% for article in site.articles reversed limit: 3 %}
-        <li>
-          <a href="{{ article.url }}">{{ article.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+    {% include article-list.html limit=3 %}
     {% if site.articles.size > 3 %}
       <p>
         <a href="/articles">See more articles</a>
@@ -60,15 +46,7 @@
     {% endif %}
 
     <h2>Projects</h2>
-    <ol>
-      {% for project in site.projects %}
-        <li>
-          <a href="project.url">{{ project.title }}</a>
-          <img src="{{ project.thumbnail }}" alt="">
-          {{ project.desc }}
-        </li>
-      {% endfor %}
-    </ol>
+    {% include project-list.html limit=3 %}
     {% if site.projects.size > 3 %}
       <p>
         <a href="/projects">See more projects</a>

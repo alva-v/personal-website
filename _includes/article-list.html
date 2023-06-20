@@ -1,0 +1,7 @@
+<ul>
+  {% for article in site.articles reversed limit: include.limit %}
+    <li>
+      <a href="{{ article.url }}">{{ article.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

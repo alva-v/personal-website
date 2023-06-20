@@ -1,0 +1,9 @@
+<ol>
+  {% for project in site.projects limit: include.limit %}
+    <li>
+      <a href="project.url">{{ project.title }}</a>
+      <img src="{{ project.thumbnail }}" alt="">
+      {{ project.desc }}
+    </li>
+  {% endfor %}
+</ol>
