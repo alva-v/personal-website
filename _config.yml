@@ -9,6 +9,7 @@ defaults:
       path: "_posts"
     values:
       layout: "default"
+  -
     scope:
       path: "_projects"
     values:
