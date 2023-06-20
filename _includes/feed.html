@@ -1,0 +1,12 @@
+{% if include.collection != nil %}
+  {% capture link %}/feed/{{ include.collection }}.xml{% endcapture %}
+{% else %}
+  {% assign link = "/feed.xml" %}
+{% endif %}
+<a href="{{ link }}">
+  <img
+    src="/assets/img/icons/feed.svg"
+    alt="Subscribe to Atom feed"
+    height="20"
+    width="20">
+</a>

@@ -1,3 +1,10 @@
+title: Alva Vially
+url: https://alva.vially.fr
+author: Alva Vially
+
+plugins:
+  - jekyll-feed
+
 defaults:
   -
     scope:
@@ -30,3 +37,8 @@ collections:
   
 exclude: 
   - assets/img/projects/*.png
+
+feed:
+  collections:
+    - projects
+    - articles

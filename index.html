@@ -7,6 +7,7 @@ layout: none
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% feed_meta %}
     <title>Alva Vially</title>
   </head>
 
@@ -31,6 +32,7 @@ layout: none
     </nav>
 
     <h2>Updates</h2>
+    {% include feed.html %}
     {% include update-list.html limit=3 %}
     {% if site.posts.size > 3 %}
       <p>
@@ -39,6 +41,7 @@ layout: none
     {% endif %}
 
     <h2>Articles</h2>
+    {% include feed.html collection = "articles" %}
     {% include article-list.html limit=3 %}
     {% if site.articles.size > 3 %}
       <p>
@@ -47,6 +50,7 @@ layout: none
     {% endif %}
 
     <h2>Projects</h2>
+    {% include feed.html collection = "projects" %}
     {% include project-list.html limit=3 %}
     {% if site.projects.size > 3 %}
       <p>
