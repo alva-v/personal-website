@@ -1,6 +1,12 @@
 defaults:
   -
     scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
       path: "_articles"
     values:
       layout: "article"
