@@ -1,0 +1,16 @@
+<nav>
+  <ol>
+    <li>
+      <a href="/">Alva Vially</a>
+    </li>
+    {% if page.collection == "posts" %}
+      <li>
+        <a href="/updates">Updates</a>
+      </li>
+    {% elsif page.collection != nil %}
+      <li>
+        <a href="/{{ page.collection }}">{{ page.collection | capitalize }}</a>
+      </li>
+    {% endif %}
+  </ol>
+</nav>
