@@ -14,31 +14,27 @@ defaults:
       layout: "default"
   -
     scope:
-      path: "_articles"
+      path: "articles/_posts"
     values:
       layout: "article"
+      permalink: "articles/:title"
   -
     scope:
-      path: "_posts"
+      path: "updates/_posts"
     values:
       layout: "update"
   -
     scope:
-      path: "_projects"
+      path: "projects/_posts"
     values:
       layout: "project"
-
-collections:
-  articles:
-    output: true
-    sort_by: update
-  projects:
-    output: true
+      permalink: "projects/:title"
   
 exclude: 
   - assets/img/projects/*.png
 
 feed:
-  collections:
-    - projects
+  categories:
     - articles
+    - projects
+    - updates

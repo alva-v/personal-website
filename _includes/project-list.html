@@ -1,5 +1,6 @@
 <ol>
-  {% for project in site.projects limit: include.limit %}
+  {% assign projects = site.posts | where: "categories", "projects" %}
+  {% for project in projects limit: include.limit %}
     <li>
       <a href="{{ project.url }}">{{ project.title }}</a>
       <img src="{{ project.image }}" alt="">
