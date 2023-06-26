@@ -7,4 +7,9 @@
       <a href="{{ update.url }}">{{ update.title }}</a>
     </li>
   {% endfor %}
+  {% if include.more == 1 and updates.size > 3 %}
+    <p>
+      <a href="/updates">See more updates</a>
+    </p>
+  {% endif %}
 </ol>

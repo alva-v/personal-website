@@ -5,4 +5,9 @@
       <a href="{{ article.url }}">{{ article.title }}</a>
     </li>
   {% endfor %}
+  {% if include.more == 1 and articles.size > 3 %}
+    <p>
+      <a href="/articles">See more articles</a>
+    </p>
+  {% endif %}
 </ul>

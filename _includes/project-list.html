@@ -7,4 +7,9 @@
       {{ project.description }}
     </li>
   {% endfor %}
+  {% if include.more == 1 and projects.size > 3 %}
+    <p>
+      <a href="/projects">See more projects</a>
+    </p>
+  {% endif %}
 </ol>

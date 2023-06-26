@@ -1,5 +1,5 @@
-{% if include.collection != nil %}
-  {% capture link %}/feed/{{ include.collection }}.xml{% endcapture %}
+{% if include.category != nil %}
+  {% capture link %}/feed/{{ include.category }}.xml{% endcapture %}
 {% else %}
   {% assign link = "/feed.xml" %}
 {% endif %}

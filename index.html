@@ -13,6 +13,7 @@ layout: none
 
   <body>
     <h1>Alva Vially</h1>
+    {% include feed.html %}
     <img src="/assets/img/alva.jpg" alt="">
     <p>
       Hey, I'm Alva Vially, a PHP/Laravel webdev currently based in Lyon, France. <br>
@@ -32,31 +33,13 @@ layout: none
     </nav>
 
     <h2>Updates</h2>
-    {% include feed.html %}
-    {% include update-list.html limit=3 %}
-    {% if site.posts.size > 3 %}
-      <p>
-        <a href="/updates">See more updates</a>
-      </p>
-    {% endif %}
+    {% include update-list.html limit=3 more=1 %}
 
     <h2>Articles</h2>
-    {% include feed.html collection = "articles" %}
-    {% include article-list.html limit=3 %}
-    {% if site.articles.size > 3 %}
-      <p>
-        <a href="/articles">See more articles</a>
-      </p>
-    {% endif %}
+    {% include article-list.html limit=3 more=1 %}
 
     <h2>Projects</h2>
-    {% include feed.html collection = "projects" %}
-    {% include project-list.html limit=3 %}
-    {% if site.projects.size > 3 %}
-      <p>
-        <a href="/projects">See more projects</a>
-      </p>
-    {% endif %}
+    {% include project-list.html limit=3 more=1 %}
 
   </body>
 </html>
