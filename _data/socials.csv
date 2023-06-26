@@ -1,2 +1,4 @@
-text,link,icon
-Github,https://github.com/alva-v,
+name,link,contact,icon
+Github,https://github.com/alva-v,0
+Matrix,https://matrix.to/#/@alva:matrix.doesnotexist.club,1
+Twitter,https://twitter.com/AlvaVially,1

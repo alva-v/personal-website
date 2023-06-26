@@ -12,3 +12,13 @@ js: assets/js/mail-decrypt.js
   <a href="assets/alva-vially.asc">GPG Key</a>
   (fingerprint: DBB2 65C6 0338 A230 6BC3 8336 7C28 421D 7E3E 54F6)
 </p>
+<h2>Other means</h2>
+In order of usage frequency:
+<ol>
+  {% assign socials = site.data.socials | where: "contact", "1" %}
+  {% for item in socials %}
+    <li>
+      <a href="{{ item.link }}">{{ item.name }}</a>
+    </li>
+  {% endfor %}
+</ol>
