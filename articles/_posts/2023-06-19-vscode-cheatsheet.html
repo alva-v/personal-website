@@ -1,8 +1,11 @@
 ---
 title: My VSCode cheatsheet
 update: 2023-06-19
+highlight: 1
 ---
-<p>All of these are used on VSCodium Linux</p>
+<p>Some shortcuts and config options I too often forget</p>
+<p>I use all of these on VSCodium Linux</p>
+<h2>Shortcuts</h2>
 <dl>
   <dt>line wrap</dt>
   <dd>ctrl+z</dd>
@@ -10,3 +13,35 @@ update: 2023-06-19
   <dt>format</dt>
   <dd>ctrl+shift+I</dd>
 </dl>
+<h2>Config options</h2>
+<dl>
+  <dt>editor.rulers</dt>
+  <dd>
+    Displays one or more ruler/vertical line at x characters from the left. Value is an int array of the number of character from which to display the ruler.
+    {% highlight json %}
+      {% raw %}
+"editor.rulers": [
+    80,
+    120
+  ]
+      {% endraw %}
+    {% endhighlight %}
+    <figure>
+      <img src="/assets/img/articles/2023-06-19-vscode-cheatsheet/editor-ruler.jpg" alt="">
+      <figcaption>A VSCode text editor with rulers at 80 and 120 characters</figcaption>
+    </figure>
+  </dd>
+
+  <dt>files.associations</dt>
+  <dd>Associate file extensions with language modes by <a href="https://code.visualstudio.com/docs/languages/identifiers">language identifiers</a>.
+    {% highlight json %}
+      {% raw %}
+"files.associations": {
+  "*.html": "liquid",
+  "*.md": "liquid",
+}
+      {% endraw %}
+    {% endhighlight %}
+  </dd>
+</dl>
+<h3 id="exemples">Exemple</h3>
