@@ -3,13 +3,9 @@
     <li>
       <a href="/">Alva Vially</a>
     </li>
-    {% if page.collection == "posts" %}
+    {% if page.categories != nil %}
       <li>
-        <a href="/updates">Updates</a>
-      </li>
-    {% elsif page.collection != nil %}
-      <li>
-        <a href="/{{ page.collection }}">{{ page.collection | capitalize }}</a>
+        <a href="/{{ page.categories | first }}">{{ page.categories | first | capitalize }}</a>
       </li>
     {% endif %}
   </ol>
