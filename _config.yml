@@ -12,23 +12,25 @@ defaults:
       type: "pages"
     values:
       layout: "default"
+      permalink: "/:basename"
   -
     scope:
       path: "articles/_posts"
     values:
       layout: "article"
-      permalink: "articles/:title"
+      permalink: "/:categories/:title"
   -
     scope:
       path: "updates/_posts"
     values:
       layout: "update"
+      permalink: "/:categories/:year/:month/:day/:title"
   -
     scope:
       path: "projects/_posts"
     values:
       layout: "project"
-      permalink: "projects/:title"
+      permalink: "/:categories/:title"
   
 exclude: 
   - assets/img/projects/*.png
