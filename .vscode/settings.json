@@ -2,6 +2,7 @@
     "files.associations": {
         "*.html": "liquid",
         "*.md": "liquid",
-        "*.scss": "liquid-scss",
+        "**/assets/css/*.scss": "liquid-scss",
+        "**/_sass/*.scss": "scss"
       }
 }

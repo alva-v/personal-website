@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if page.js %}
-      <script src="{{ page.js }}" defer></script>
-    {% endif %}
-    {% feed_meta %}
-    <link rel="stylesheet" href="/main.css">
-    {% if page.highlight %}
-      <link rel="stylesheet" href="/pygment.css">
-    {% endif %}
-    <title>{{ page.title }}</title>
-  </head>
+  {% include head.html %}
   <body>
     <header>
       {% include breadcrumb.html %}

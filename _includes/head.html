@@ -1,0 +1,17 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if page.js %}
+    <script src="{{ page.js }}" defer></script>
+  {% endif %}
+  {% feed_meta %}
+  <link rel="stylesheet" href="/style.css">
+  {% if page.highlight %}
+    <link rel="stylesheet" href="/pygment.css">
+  {% endif %}
+  {% if page.title %}
+    <title>{{ page.title }} ‑ {{ site.title }}</title>
+  {% else %}
+    <title>{{ site.title }}</title>
+  {% endif %}
+</head>

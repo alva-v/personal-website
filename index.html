@@ -4,41 +4,35 @@ layout: none
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% feed_meta %}
-    <title>Alva Vially</title>
-  </head>
+  {% include head.html %}
 
   <body>
     <h1>Alva Vially</h1>
     {% include feed.html %}
-    <img src="/assets/img/alva.jpg" alt="">
-    <p>
-      Hey, I'm Alva Vially, a PHP/Laravel webdev currently based in Lyon, France. <br>
-      My interests include FOSS, minimalism and the impact of technology on our societies and environments.
-    </p>
+    <main>
+      <img src="/assets/img/alva.jpg" alt="">
+      <p>Hey, I'm Alva Vially, a PHP/Laravel webdev currently based in Lyon, France.</p>
+      <p>My interests include FOSS, minimalism and the impact of technology on our societies and environments.</p>
 
-    <nav>
-      <ul>
-        {% assign nav = site.data.nav | where: "in_home", "1" %}
-        {% for item in nav %}
-          <li>
-            <a href="{{ item.link }}">{{ item.text }}</a>
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          {% assign nav = site.data.nav | where: "in_home", "1" %}
+          {% for item in nav %}
+            <li>
+              <a href="{{ item.link }}">{{ item.text }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
 
-    <h2>Updates</h2>
-    {% include update-list.html limit=3 more=1 %}
+      <h2>Updates</h2>
+      {% include update-list.html limit=3 more=1 %}
 
-    <h2>Articles</h2>
-    {% include article-list.html limit=3 more=1 %}
+      <h2>Articles</h2>
+      {% include article-list.html limit=3 more=1 %}
 
-    <h2>Projects</h2>
-    {% include project-list.html limit=3 more=1 %}
-
+      <h2>Projects</h2>
+      {% include project-list.html limit=3 more=1 %}
+    </main>
   </body>
 </html>
