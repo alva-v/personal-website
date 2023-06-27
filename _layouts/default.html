@@ -7,6 +7,10 @@
       <script src="{{ page.js }}" defer></script>
     {% endif %}
     {% feed_meta %}
+    <link rel="stylesheet" href="/main.css">
+    {% if page.highlight %}
+      <link rel="stylesheet" href="/pygment.css">
+    {% endif %}
     <title>{{ page.title }}</title>
   </head>
   <body>
