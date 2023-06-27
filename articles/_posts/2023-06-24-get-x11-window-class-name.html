@@ -1,13 +1,12 @@
 ---
 title: "How to get a X11 window class name"
 update: 2023-06-27
-highlight: 1
 ---
 <p>I sometimes need a window's X11 class name, for example when doing my i3 config. Here is how I get it on my linux system</p>
 <ol>
   <li>Open a terminal</li>
   <li>
-    <code>cat xprop|grep WM_CLASS</code>
+    <code>xprop|grep WM_CLASS</code>
   </li>
   <li>Click on the target window</li>
 </ol>
