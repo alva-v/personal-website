@@ -1,6 +1,9 @@
 <nav>
   <ul>
-    {% assign nav = site.data.nav | where: "in_home", "1" %}
+    {% assign nav = site.data.nav %}
+    {% if include.home %}
+      {% assign nav = nav | where: "in_home", "1" %}
+    {% endif %}
     {% for item in nav %}
       <li>
         <a
