@@ -6,7 +6,7 @@ body {
     color: $color-main;
     font-family: sans-serif;
     min-height: 100vh;
-    size: 16px;
+    font-size: 16px;
 }
 
 a {
@@ -14,7 +14,7 @@ a {
 }
 
 /* =============================================================================
-    General width & alignment
+    Width & alignment
 ============================================================================= */
 
 h1,
@@ -24,13 +24,24 @@ h2 {
 
 h3,
 h4 {
+    margin-left: auto;
+    margin-right: auto;
     max-width: 700px;
     text-align: left;
 }
 
 main {
-    margin: 0 auto;
-    max-width: 850px;
+    figure {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 850px;
+
+        pre {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 650px;
+        }
+    }
 
     p,
     dl,
@@ -39,6 +50,26 @@ main {
         margin-left: auto;
         margin-right: auto;
         max-width: 600px;
+    }
+
+    div {
+        max-width: none;
+    }
+}
+
+/*  introduction alignment
+============================================================================= */
+.introduction {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+
+    * {
+        margin-left: 0;
+        margin-right: 0;
+        height: min-content;
     }
 }
 

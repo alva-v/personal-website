@@ -9,12 +9,15 @@ layout: none
   <body>
     <h1>Alva Vially</h1>
     <main>
-      <img src="/assets/img/alva.jpg" alt="">
-      <p>Hey, I'm Alva Vially, a PHP/Laravel webdev currently based in Lyon, France.</p>
-      <p>My interests include FOSS, minimalism and the impact of technology on our societies and environments.</p>
+      <div class="introduction">
+        <img src="/assets/img/alva.jpg" alt="">
+        <div>
+          <p>Hey, I'm Alva Vially, a PHP/Laravel webdev currently based in Lyon, France.</p>
+          <p>My interests include FOSS, minimalism and the impact of technology on our societies and environments.</p>
+          {% include nav.html %}
+        </div>
+      </div>
 
-      {% include nav.html %}
-      
       <h2>Updates</h2>
       {% include update-list.html limit=3 more=1 %}
 
