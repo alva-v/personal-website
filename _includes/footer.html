@@ -1,14 +1,6 @@
 <footer>
   {% include breadcrumb.html %}
-  <nav>
-    <ul>
-      {% for item in site.data.nav %}
-        <li>
-          <a href="{{ item.link }}">{{ item.text }}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
+  {% include nav.html %}
   <address>
     <ul>
       {% for item in site.data.socials %}

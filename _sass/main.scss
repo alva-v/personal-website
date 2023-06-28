@@ -4,7 +4,9 @@ $color-main: white;
 body {
     background-color: $color-bg;
     color: $color-main;
+    font-family: sans-serif;
     min-height: 100vh;
+    size: 16px;
 }
 
 a {
@@ -39,3 +41,12 @@ main {
         max-width: 600px;
     }
 }
+
+/* =============================================================================
+    Icon decoration
+============================================================================= */
+.icon-feed::after {
+    vertical-align: -20%;
+    content:url("/assets/img/icons/feed.png");
+    padding-left: .25em;
+} 

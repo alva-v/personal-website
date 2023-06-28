@@ -1,0 +1,16 @@
+<nav>
+  <ul>
+    {% assign nav = site.data.nav | where: "in_home", "1" %}
+    {% for item in nav %}
+      <li>
+        <a
+          href="{{ item.link }}"
+          {% if item.icon %}
+          class="icon-{{ item.icon }}"
+          {% endif %}>
+          {{ item.text }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
