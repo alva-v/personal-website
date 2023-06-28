@@ -77,7 +77,29 @@ main {
     Icon decoration
 ============================================================================= */
 .icon-feed::after {
-    vertical-align: -20%;
-    content:url("/assets/img/icons/feed.png");
+    vertical-align: middle;
+    content: url("/assets/img/icons/feed.png");
     padding-left: .25em;
-} 
+}
+
+/* =============================================================================
+    Nav elements
+============================================================================= */
+ol,
+ul {
+    li>a {
+        display: inline-block;
+        padding: .2em 0;
+        vertical-align: middle;
+        margin-top: .1em;
+        margin-bottom: .1em;
+    }
+
+    li:first-child>a {
+        margin-top: initial;
+    }
+
+    li:last-child>a {
+        margin-bottom: initial;
+    }
+}
