@@ -59,6 +59,10 @@ main {
     }
 }
 
+p, li {
+    line-height: 1.5em;
+}
+
 /*  Figures
 ============================================================================= */
 
@@ -104,23 +108,18 @@ figure figcaption {
 /* =============================================================================
     Nav elements
 ============================================================================= */
-ol,
-ul {
+nav>ol,
+nav>ul {
     li>a {
         display: inline-block;
-        margin-bottom: .1em;
-        margin-top: .1em;
+        line-height: 1.5em;
         padding: .2em 0;
         vertical-align: middle;
     }
+}
 
-    li:first-child>a {
-        margin-top: initial;
-    }
-
-    li:last-child>a {
-        margin-bottom: initial;
-    }
+nav>ol li {
+    list-style-type: none;
 }
 
 /*  Breadcrumb
@@ -131,9 +130,9 @@ nav.breadcrumb {
     max-width: $width-large;
     margin-left: auto;
     margin-right: auto;
-    
+
     a {
-        margin: 0; 
+        margin: 0;
     }
 
     a::before {
@@ -142,6 +141,68 @@ nav.breadcrumb {
         text-decoration: none;
     }
 
-    li { display: inline; }
-    ol { padding: 0;}
+    li {
+        display: inline;
+    }
+
+    ol {
+        padding: 0;
+    }
+}
+
+/* =============================================================================
+    Cards
+============================================================================= */
+
+nav.cards {
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: none;
+        padding-left: 0;
+    }
+
+    li.card {
+        align-self: start;
+        border-color: $color-main;
+        border-style: solid;
+        border-width: .1em;
+        list-style-type: none;
+        margin: 0;
+        max-width: 400px;
+
+        a,
+        p {
+            margin: .5em;
+            padding: 0;
+        }
+
+        img {
+            border-color: $color-main;
+            border-style: solid;
+            border-width: 1px 0;
+            display: block;
+            max-width: 400px;
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+/* =============================================================================
+    Kbd
+============================================================================= */
+
+kbd {
+    background-color: $color-main;
+    border-radius: .25em;
+    color: $color-bg;
+    display: inline-block;
+    padding: .25em .25em;
 }

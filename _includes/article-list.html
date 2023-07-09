@@ -1,13 +1,16 @@
-<ul>
-  {% assign articles = site.posts | where: "categories", "articles" | sort: "update" %}
-  {% for article in articles reversed limit: include.limit %}
-    <li>
-      <a href="{{ article.url }}">{{ article.title }}</a>
-    </li>
-  {% endfor %}
+<nav>
+  <ul>
+    {% assign articles = site.posts | where: "categories", "articles" | sort: "update" %}
+    {% for article in articles reversed limit: include.limit %}
+      <li>
+        <a href="{{ article.url }}">{{ article.title }}</a>
+      </li>
+    {% endfor %}
+
+  </ul>
   {% if include.more == 1 and articles.size > 3 %}
     <p>
       <a href="/articles">See more articles</a>
     </p>
   {% endif %}
-</ul>
+</nav>

@@ -1,15 +1,17 @@
-<ol>
-  {% assign projects = site.posts | where: "categories", "projects" %}
-  {% for project in projects limit: include.limit %}
-    <li>
-      <a href="{{ project.url }}">{{ project.title }}</a>
-      <img src="{{ project.image }}" alt="">
-      {{ project.description }}
-    </li>
-  {% endfor %}
+<nav class="cards">
+  <ol>
+    {% assign projects = site.posts | where: "categories", "projects" %}
+    {% for project in projects limit: include.limit %}
+      <li class="card">
+        <a href="{{ project.url }}">{{ project.title }}</a>
+        <img src="{{ project.image }}" alt="">
+        <p>{{ project.description }}</p>
+      </li>
+    {% endfor %}
+  </ol>
   {% if include.more == 1 and projects.size > 3 %}
     <p>
       <a href="/projects">See more projects</a>
     </p>
   {% endif %}
-</ol>
+</nav>
