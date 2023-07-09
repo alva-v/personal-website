@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
-<p>This article was last updated on {{ page.update | date_to_string: "ordinal", "US" }}</p>
-
+<p class="date">This article was last updated on {{ page.update | date_to_string: "ordinal", "US" }}</p>
+<main>
 {{ content }}
+</main>
