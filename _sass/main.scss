@@ -55,6 +55,14 @@ main {
         width: min-content;
     }
 
+    dd+dt {
+        margin-top: .8em;
+    }
+    
+    dt {
+        font-weight: bold;
+    }
+
     p,
     dl,
     ul,
