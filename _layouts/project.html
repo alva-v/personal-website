@@ -2,8 +2,14 @@
 layout: default
 ---
 <p class="date">Project first published on {{ page.date | date_to_string: "ordinal", "US" }}</p>
-<div class="project-links">
-  <a href="{{ page.link }}">Website</a>
-  <a href="{{ page.repo }}">Repository</a>
-</div>
+{% if page.link or page.repo %}
+  <div class="project-links">
+    {% if page.link %}
+      <a href="{{ page.link }}">Website</a>
+    {% endif %}
+    {% if page.repo %}
+      <a href="{{ page.repo }}">Repository</a>
+    {% endif %}
+  </div>
+{% endif %}
 {{ content }}
