@@ -33,16 +33,26 @@ h4 {
 }
 
 main {
-    figure {
+
+    figure,
+    img {
         margin-left: auto;
         margin-right: auto;
-        max-width: $width-large;
+        max-width: min($width-large, 100%);
+    }
 
-        pre {
-            margin-left: auto;
-            margin-right: auto;
-            max-width: $width-normal;
-        }
+    figure pre {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $width-normal;
+    }
+
+    img {
+        display: block;
+        border-color: $color-main;
+        border-style: solid;
+        border-width: 1px;
+        width: min-content;
     }
 
     p,
@@ -99,6 +109,16 @@ figure pre {
         margin-right: 0;
         height: min-content;
     }
+}
+
+/*  Project links
+============================================================================= */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin-bottom: 1em;
 }
 
 /* =============================================================================
@@ -167,7 +187,7 @@ nav.cards {
         justify-content: center;
         margin-left: 0;
         margin-right: 0;
-        max-width: none;
+        max-width: 100%;
         padding-left: 0;
     }
 
@@ -179,6 +199,7 @@ nav.cards {
         list-style-type: none;
         margin: 0;
         max-width: 400px;
+        width: 100%;
 
         a,
         p {
@@ -191,7 +212,6 @@ nav.cards {
             border-style: solid;
             border-width: 1px 0;
             display: block;
-            max-width: 400px;
         }
     }
 

@@ -2,6 +2,8 @@
 layout: default
 ---
 <p class="date">Project first published on {{ page.date | date_to_string: "ordinal", "US" }}</p>
-<a href="{{ page.link }}">website</a>
-<a href="{{ page.repo }}">repo</a>
+<div class="project-links">
+  <a href="{{ page.link }}">Website</a>
+  <a href="{{ page.repo }}">Repository</a>
+</div>
 {{ content }}
