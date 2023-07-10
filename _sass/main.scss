@@ -7,7 +7,6 @@ body {
     background-color: $color-bg;
     color: $color-main;
     font-family: sans-serif;
-    min-height: 100vh;
     font-size: 16px;
 }
 
@@ -52,13 +51,13 @@ main {
         border-color: $color-main;
         border-style: solid;
         border-width: 1px;
-        width: min-content;
+        max-height: 80vh;
     }
 
     dd+dt {
         margin-top: .8em;
     }
-    
+
     dt {
         font-weight: bold;
     }
@@ -86,7 +85,6 @@ li {
 ============================================================================= */
 
 figure img {
-    max-height: 100%;
     max-width: 100%;
 }
 
