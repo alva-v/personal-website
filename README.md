@@ -1,4 +1,4 @@
 # personal-website
-My website available https://alva.vially.fr
+My website available https://alva.vially.fr.
 
-Made with Jekyll
+Made with Jekyll.
