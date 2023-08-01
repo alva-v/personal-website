@@ -15,19 +15,19 @@ defaults:
       permalink: "/:basename"
   -
     scope:
-      path: "articles/_posts"
+      path: "articles/_*"
     values:
       layout: "article"
       permalink: "/:categories/:title"
   -
     scope:
-      path: "updates/_posts"
+      path: "updates/_*"
     values:
       layout: "update"
       permalink: "/:categories/:year/:month/:day/:title"
   -
     scope:
-      path: "projects/_posts"
+      path: "projects/_*"
     values:
       layout: "project"
       permalink: "/:categories/:title"

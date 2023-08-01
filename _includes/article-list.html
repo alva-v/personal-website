@@ -1,7 +1,7 @@
 <nav>
   <ul>
-    {% assign articles = site.posts | where: "categories", "articles" | sort: "update" %}
-    {% for article in articles reversed limit: include.limit %}
+    {% assign articles = site.posts | where: "categories", "articles" | sort: "update" | reverse %}
+    {% for article in articles limit: include.limit %}
       <li>
         <a href="{{ article.url }}">{{ article.title }}</a>
       </li>
