@@ -1,9 +1,9 @@
 <nav class="breadcrumb">
   <ol>
-    <li><a href="/">Alva Vially </a></li>
+    <li><a href="{{ site.baseurl }}/">Alva Vially </a></li>
     {% if page.categories != nil %}
       <li>
-        <a href="/{{ page.categories | first }}">{{ page.categories | first | capitalize }}</a>
+        <a href="{% link {{ page.categories | first }}.html %}">{{ page.categories | first | capitalize }}</a>
       </li>
     {% endif %}
   </ol>

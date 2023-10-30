@@ -1,11 +1,6 @@
-{% if include.category != nil %}
-  {% capture link %}/feed/{{ include.category }}.xml{% endcapture %}
-{% else %}
-  {% assign link = "/feed.xml" %}
-{% endif %}
-<a href="{{ link }}" class="feed">
+<a href="{{ /feed.xml | relative_url }}" class="feed">
   <img
-    src="/assets/img/icons/feed.png"
+    src="{% link /assets/img/alva.jpg %}"
     alt="Subscribe to Atom feed"
     height="20"
     width="20">

@@ -2,12 +2,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% if page.js %}
-    <script src="{{ page.js }}" defer></script>
+    <script src="{% link {{ page.js }} %}" defer></script>
   {% endif %}
   {% feed_meta %}
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href={{ "/style.css" | relative_url }}>
   {% if page.highlight %}
-    <link rel="stylesheet" href="/highlight.css">
+    <link rel="stylesheet" href={{ "/highlight.css" | relative_url }}>
   {% endif %}
   {% if page.title %}
     <title>{{ page.title }} ‑ {{ site.title }}</title>
