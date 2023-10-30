@@ -3,15 +3,15 @@
     {% assign projects = site.posts | where: "categories", "projects" %}
     {% for project in projects limit: include.limit %}
       <li class="card">
-        <a href="{{ project.url }}">{{ project.title }}</a>
-        <img src="{{ project.image }}" alt="">
+        <a href="{% link {{ project.path }} %}">{{ project.title }}</a>
+        <img src="{% link {{ project.image }} %}" alt="">
         <p>{{ project.description }}</p>
       </li>
     {% endfor %}
   </ol>
   {% if include.more == 1 and projects.size > 3 %}
     <p>
-      <a href="/projects">See more projects</a>
+      <a href="{% link projects.html %}">See more projects</a>
     </p>
   {% endif %}
 </nav>

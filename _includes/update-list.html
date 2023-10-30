@@ -5,13 +5,13 @@
       <li>
         {{ update.date | date: "%y-%m-%d" }}
         <span aria-hidden="true">|</span>
-        <a href="{{ update.url }}">{{ update.title }}</a>
+        <a href="{% link {{ update.path }} %}">{{ update.title }}</a>
       </li>
     {% endfor %}
   </ol>
   {% if include.more == 1 and updates.size > 3 %}
     <p>
-      <a href="/updates">See more updates</a>
+      <a href="{% link updates.html %}">See more updates</a>
     </p>
   {% endif %}
 </nav>
