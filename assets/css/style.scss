@@ -1,3 +1,4 @@
 ---
 ---
+$baseurl: "{% if site.baseurl != '/' %}{{ site.baseurl }}{% endif %}";
 @import "main";

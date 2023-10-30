@@ -4,6 +4,7 @@
   {% if page.js %}
     <script src="{% link {{ page.js }} %}" defer></script>
   {% endif %}
+  <link rel="shortcut icon" href="{{ "./favicon.ico" | relative_url }}" type="image/x-icon">
   {% feed_meta %}
   <link rel="stylesheet" href={{ "/style.css" | relative_url }}>
   {% if page.highlight %}

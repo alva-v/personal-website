@@ -132,7 +132,7 @@ figure pre {
 ============================================================================= */
 .icon-feed::after {
     vertical-align: middle;
-    content: url("/assets/img/icons/feed.png");
+    content: url($baseurl + "/assets/img/icons/feed.png");
     padding-left: .25em;
 }
 
