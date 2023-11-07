@@ -41,8 +41,8 @@ jobs:
           cd $DIR_REMOTE;
           mirror -vRen;"
         env:
-          SERVER_USERNAME=${{secrets.SERVER_USERNAME}};
-          SERVER_PWD=${{secrets.SERVER_PWD}};
-          SERVER_DOMAIN=${{secrets.SERVER_DOMAIN}};
-          DIR_LOCAL=${{secrets.DIR_LOCAL}};
-          DIR_REMOTE=${{secrets.DIR_REMOTE}};
+          SERVER_USERNAME: ${{secrets.SERVER_USERNAME}};
+          SERVER_PWD: ${{secrets.SERVER_PWD}};
+          SERVER_DOMAIN: ${{secrets.SERVER_DOMAIN}};
+          DIR_LOCAL: ${{secrets.DIR_LOCAL}};
+          DIR_REMOTE: ${{secrets.DIR_REMOTE}};
