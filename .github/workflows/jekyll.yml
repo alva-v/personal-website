@@ -14,34 +14,35 @@ concurrency:
   group: "deploy"
   cancel-in-progress: false
 
-runs:
-  environment:
-    name: production
-  runs-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-    - name: Setup Ruby
-      uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
-      with:
-        ruby-version: '3.1' # Not needed with a .ruby-version file
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-        cache-version: 0 # Increment this number if you need to re-download cached gems
-    - name: Build with Jekyll
-      # Outputs to the './_site' directory by default
-      run: bundle exec jekyll build
-      env:
-        JEKYLL_ENV: production
-    - name: Deploy with SFTP
-      run: |
-        sudo apt install -y lftp;
-        lftp -c "open sftp://$SERVER_USERNAME:$SERVER_PWD@$SERVER_DOMAIN;
-        lcd $DIR_LOCAL;
-        cd $DIR_REMOTE;
-        mirror -vRen;"
-      env:
-        SERVER_USERNAME=${{secrets.SERVER_USERNAME}};
-        SERVER_PWD=${{secrets.SERVER_PWD}};
-        SERVER_DOMAIN=${{secrets.SERVER_DOMAIN}};
-        DIR_LOCAL=${{secrets.DIR_LOCAL}};
-        DIR_REMOTE=${{secrets.DIR_REMOTE}};
+jobs:
+  build-and-deploy:
+    environment:
+      name: production
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
+        with:
+          ruby-version: '3.1' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+      - name: Deploy with SFTP
+        run: |
+          sudo apt install -y lftp;
+          lftp -c "open sftp://$SERVER_USERNAME:$SERVER_PWD@$SERVER_DOMAIN;
+          lcd $DIR_LOCAL;
+          cd $DIR_REMOTE;
+          mirror -vRen;"
+        env:
+          SERVER_USERNAME=${{secrets.SERVER_USERNAME}};
+          SERVER_PWD=${{secrets.SERVER_PWD}};
+          SERVER_DOMAIN=${{secrets.SERVER_DOMAIN}};
+          DIR_LOCAL=${{secrets.DIR_LOCAL}};
+          DIR_REMOTE=${{secrets.DIR_REMOTE}};
