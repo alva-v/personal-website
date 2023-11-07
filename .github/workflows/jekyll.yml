@@ -37,6 +37,7 @@ jobs:
         run: sudo apt install -y lftp;
       - name: Deploy with lftp
         run: |
+          set sftp:auto-confirm yes;
           lftp -c "open sftp://$SERVER_USERNAME:$SERVER_PWD@$SERVER_DOMAIN;
           lcd $DIR_LOCAL;
           cd $DIR_REMOTE;
