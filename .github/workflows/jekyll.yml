@@ -33,12 +33,13 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
-      - name: Deploy with SFTP
+      - name: Install lftp
+        run: sudo apt install -y lftp;
+      - name: Deploy with lftp
         run: |
-          sudo apt install -y lftp;
-          lftp -c "open sftp://$SERVER_USERNAME:$SERVER_PWD@$SERVER_DOMAIN;
-          lcd $DIR_LOCAL;
-          cd $DIR_REMOTE;
+          lftp -c "open sftp://${SERVER_USERNAME}:${SERVER_PWD}@${SERVER_DOMAIN};
+          lcd ${DIR_LOCAL};
+          cd ${DIR_REMOTE};
           mirror -vRen;"
         env:
           SERVER_USERNAME: ${{secrets.SERVER_USERNAME}};
