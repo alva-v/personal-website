@@ -34,6 +34,7 @@ defaults:
   
 exclude: 
   - assets/img/projects/*.png
+  - README.md
 
 feed:
   categories:
