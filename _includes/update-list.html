@@ -1,5 +1,5 @@
 <nav>
-  <ol>
+  <ul>
     {% assign updates = site.posts | where: "categories", "updates" %}
     {% for update in updates limit: include.limit %}
       <li>
@@ -8,7 +8,7 @@
         <a href="{% link {{ update.path }} %}">{{ update.title }}</a>
       </li>
     {% endfor %}
-  </ol>
+  </ul>
   {% if include.more == 1 and updates.size > 3 %}
     <p>
       <a href="{% link updates.html %}">See more updates</a>

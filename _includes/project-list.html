@@ -1,5 +1,5 @@
 <nav class="cards">
-  <ol>
+  <ul>
     {% assign projects = site.posts | where: "categories", "projects" %}
     {% for project in projects limit: include.limit %}
       <li class="card">
@@ -8,7 +8,7 @@
         <p>{{ project.description }}</p>
       </li>
     {% endfor %}
-  </ol>
+  </ul>
   {% if include.more == 1 and projects.size > 3 %}
     <p>
       <a href="{% link projects.html %}">See more projects</a>
