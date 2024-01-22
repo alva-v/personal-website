@@ -3,7 +3,7 @@
     {% assign updates = site.posts | where: "categories", "updates" %}
     {% for update in updates limit: include.limit %}
       <li>
-        {{ update.date | date: "%y-%m-%d" }}
+        {{ update.date | date: "%Y-%m-%d" }}
         <span aria-hidden="true">|</span>
         <a href="{% link {{ update.path }} %}">{{ update.title }}</a>
       </li>
