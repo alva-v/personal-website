@@ -1,0 +1,24 @@
+---
+title: How to archive a Patreon podcast using yt-dlp
+highlight: 1
+update: 2025-07-14
+category: articles
+layout: "article"
+permalink: "/:categories/:title"
+---
+<p>
+  If you subscribed to a podcast on Patreon, you might want to archive its episodes. It would allow you to upload them on an offline MP3 player, share them with other people or go back at them later if you unsubscribed or they were deleted by their creator.<p> Here's how to do it using yt-dlp:</p>
+
+  <h2>Setup</h2>
+  <p>First you need to <a href="https://github.com/yt-dlp/yt-dlp/wiki/Installation">make sure you have yt-dlp's last version installed on your computer</a>.  </p>
+  <p>Then, <a href="https://github.com/yt-dlp/yt-dlp#impersonation">install curl_cffi</a> to be able to bypass Patreon's bot protection. It might also help to disable your VPN if you use one</p>
+  <p>Finally,  using a web browser, connect on the Patreon that's subscribed to the podcast you want to download (we'll use Firefox here). This step is needed to create the authentication cookies yt-dlp will use to connect to your Patreon account</p>
+
+  <h2>Downloading</h2>
+  <p>We'll use this command, a detailled explanation follows :<br>
+    {% highlight bash %}
+      yt-dlp
+    {% endhighlight %}
+  </p>
+  rm cw from url
+</p>
